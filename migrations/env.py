@@ -12,8 +12,12 @@ from src.config import Config
 
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.
+print("Loaded driver:", Config.DATABASE_URL.split("://", 1)[0])   #delete this afterward
 config = context.config
-database_url= Config.DATABASE_URL #placement changed 
+database_url= Config.DATABASE_URL #placement changed
+
+
+
 config.set_main_option("sqlalchemy.url", database_url.replace("%", "%%"))
 # Interpret the config file for Python logging.
 # This line sets up loggers basically.

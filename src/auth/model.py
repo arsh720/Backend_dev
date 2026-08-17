@@ -1,6 +1,9 @@
 from sqlmodel import SQLModel, Field, Column
 import sqlalchemy.dialects.postgresql as pg
 import uuid
+from datetime import datetime
+
+from sqlalchemy import func
 
 
 class User(SQLModel, table=True):
